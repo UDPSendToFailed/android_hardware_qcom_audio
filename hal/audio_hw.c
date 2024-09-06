@@ -2279,6 +2279,8 @@ int select_devices(struct audio_device *adev, audio_usecase_t uc_id)
           out_snd_device, platform_get_snd_device_name(out_snd_device),
           in_snd_device,  platform_get_snd_device_name(in_snd_device));
 
+    property_set("sys.audio.quadspk", out_snd_device == SND_DEVICE_OUT_SPEAKER ? "1" : "0");
+
     /*
      * Limitation: While in call, to do a device switch we need to disable
      * and enable both RX and TX devices though one of them is same as current
