@@ -7043,19 +7043,11 @@ int platform_set_stream_channel_map(void *platform, audio_channel_mask_t channel
                 channel_map[2] = PCM_CHANNEL_FC;
                 break;
             case 4:
-                /* AUDIO_CHANNEL_OUT_QUAD_SIDE */
+                /* AUDIO_CHANNEL_OUT_QUAD */
                 channel_map[0] = PCM_CHANNEL_FL;
                 channel_map[1] = PCM_CHANNEL_FR;
-                channel_map[2] = PCM_CHANNEL_LS;
-                channel_map[3] = PCM_CHANNEL_RS;
-                if (channel_mask == AUDIO_CHANNEL_OUT_QUAD_BACK) {
-                    channel_map[2] = PCM_CHANNEL_LB;
-                    channel_map[3] = PCM_CHANNEL_RB;
-                }
-                if (channel_mask == AUDIO_CHANNEL_OUT_SURROUND) {
-                    channel_map[2] = PCM_CHANNEL_FC;
-                    channel_map[3] = PCM_CHANNEL_CS;
-                }
+                channel_map[2] = PCM_CHANNEL_LB;
+                channel_map[3] = PCM_CHANNEL_RB;
                 break;
             case 5:
                 /* AUDIO_CHANNEL_OUT_PENTA */
